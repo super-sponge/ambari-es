@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- Elastic search  Configurations -->
+
+<configuration supports_final="true">  
+	<property>
+        <name>cluster_name</name>
+        <value>my-es</value>
+        <description>descriptive name for your cluster</description>
+    </property> 
+    <property>
+        <name>http_port</name>
+        <value>9200</value>
+        <description>Set a custom port to listen for HTTP traffic</description>
+    </property>    
+</configuration>
+
+

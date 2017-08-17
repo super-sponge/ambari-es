@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<metainfo>
+    <schemaVersion>2.0</schemaVersion>
+    <services>
+        <service>
+            <name>ES</name>
+            <displayName>ES</displayName>
+            <comment>A distributed, RESTful search and analytics engine capable of solving a growing number of use cases.</comment>
+            <version>5.5.1</version>
+            <components>
+                <component>
+                    <name>MASTER</name>
+                    <displayName>ES Master</displayName>
+                    <category>MASTER</category>
+                    <cardinality>1</cardinality>
+					<versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/master.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+                <component>
+                    <name>SLAVE</name>
+                    <displayName>ES Slave</displayName>
+                    <category>SLAVE</category>
+                    <cardinality>1+</cardinality>
+					<versionAdvertised>true</versionAdvertised>
+                    <commandScript>
+                        <script>scripts/master.py</script>
+                        <scriptType>PYTHON</scriptType>
+                        <timeout>600</timeout>
+                    </commandScript>
+                </component>
+            </components>
+            <osSpecifics>
+                <osSpecific>
+                    <osFamily>any</osFamily>
+                    <packages>
+                        <package>
+                            <name>elasticsearch-5.5.1-1</name>
+                        </package>
+                    </packages>
+                </osSpecific>
+            </osSpecifics>
+            <configuration-dependencies>
+                  <config-type>elastic-env</config-type>
+            </configuration-dependencies>
+            <restartRequiredAfterChange>true</restartRequiredAfterChange>
+        </service>
+    </services>
+</metainfo>
+
